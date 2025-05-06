@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import Sidebar from "../Component/Sidebar";
-import certi1 from "../assets/certi1.jpeg";
-import certi2 from "../assets/certi2.jpeg";
-import certi3 from "../assets/certi3.jpeg";
-import certi4 from "../assets/certi4.jpeg";
-import certi5 from "../assets/certi5.jpeg";
-import certi6 from "../assets/certi6.jpeg";
-import certi7 from "../assets/certi7.jpeg";
-import certi8 from "../assets/certi8.jpeg";
-import certi9 from "../assets/certi9.jpeg";
-import certi10 from "../assets/certi10.jpeg";
-import certi11 from "../assets/certi11.jpeg";
+import certi1 from "../assets/Certi1.jpeg";
+import certi2 from "../assets/Certi2.jpeg";
+import certi3 from "../assets/Certi3.jpeg";
+import certi4 from "../assets/Certi4.jpeg";
+import certi5 from "../assets/Certi5.jpeg";
+import certi6 from "../assets/Certi6.jpeg";
+import certi7 from "../assets/Certi7.jpeg";
+import certi8 from "../assets/Certi8.jpeg";
+import certi9 from "../assets/Certi9.jpeg";
+import certi10 from "../assets/Certi10.jpeg";
+import certi11 from "../assets/Certi11.jpeg";
 
 const certificates = [
   {
