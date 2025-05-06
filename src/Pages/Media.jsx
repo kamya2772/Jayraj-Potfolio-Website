@@ -9,7 +9,7 @@ import img6 from "../assets/img6.jpeg";
 import img7 from "../assets/img7.jpeg";
 import img8 from "../assets/img8.jpeg";
 import img9 from "../assets/img9.jpeg";
-import img10 from "../assets/img10.jpeg";
+
 import img11 from "../assets/img11.jpeg";
 import img12 from "../assets/img12.jpeg";
 import img13 from "../assets/img13.jpeg";
@@ -48,179 +48,145 @@ import img44 from "../assets/img44.jpeg";
 const images = [
   {
     src: img1,
-    title: "Owner Image 1 - Research Lab",
+    title:
+      "Featured at Divya Bhaskar for Participating in workshop at CSIR-CSMCRI",
   },
   {
     src: img2,
-    title: "Owner Image 1 - Research Lab",
+    title: "Featuring with director of CSIR-CSMCRI at Divya Bhaskar",
   },
   {
     src: img3,
-    title: "Owner Image 1 - Research Lab",
+    title: "Student's of Jayraj stood first at inter-school science fair",
   },
   {
     src: img4,
-    title: "Owner Image 1 - Research Lab",
+    title: "Reciting poetry at Kavya Goshthi",
   },
   {
     src: img5,
-    title: "Owner Image 1 - Research Lab",
+    title: "Chilling at Rishikesh after visiting IIT Roorkee",
   },
   {
     src: img6,
-    title: "Owner Image 1 - Research Lab",
+    title:
+      "in convertation with Scientist Dr.Prakash Koringa on animal biology",
   },
   {
     src: img7,
-    title: "Owner Image 1 - Research Lab",
+    title:
+      "Falicitation by Dr.Alpesh Patel at genexplore dignostics & research centre",
   },
   {
     src: img8,
-    title: "Owner Image 1 - Research Lab",
+    title: "Jayraj With His Students at Aakash Institute",
   },
   {
     src: img9,
-    title: "Owner Image 1 - Research Lab",
-  },
-  {
-    src: img10,
-    title: "Owner Image 1 - Research Lab",
-  },
-  {
-    src: img11,
-    title: "Owner Image 1 - Research Lab",
+    title: "Explaining Plant tissue live demonstration",
   },
   {
     src: img12,
-    title: "Owner Image 1 - Research Lab",
+    title: "Explaining Anatomy of Buccal Cavity by model demonstration",
   },
   {
     src: img13,
-    title: "Owner Image 1 - Research Lab",
+    title: "Explainig Diffusion",
   },
   {
     src: img14,
-    title: "Owner Image 1 - Research Lab",
+    title: "at Wildlife Institute of India,Dehradun",
   },
   {
     src: img15,
-    title: "Owner Image 1 - Research Lab",
+    title:
+      "Plantation Drive at Veer Narmad South Gujarat University lead by Jayraj ",
   },
   {
     src: img16,
-    title: "Owner Image 1 - Research Lab",
+    title: "Plantation",
   },
   {
     src: img17,
-    title: "Owner Image 1 - Research Lab",
+    title:
+      "Jayraj with his student and the faculties of Dept. of Microbiology,Vanita Vishram Women's University",
   },
   {
     src: img18,
-    title: "Owner Image 1 - Research Lab",
+    title:
+      "Jayraj Explainig and helping his Student to extract out the phytochemicals",
   },
   {
     src: img19,
-    title: "Owner Image 1 - Research Lab",
+    title: `Students presenting their work on "Development of Nutritional Pesticide" at science fair`,
   },
   {
     src: img20,
-    title: "Owner Image 1 - Research Lab",
-  },
-  {
-    src: img21,
-    title: "Owner Image 1 - Research Lab",
+    title: `Students presenting their work on "Bio Enzyme: an alternative to hazardous household products" at science fair`,
   },
   {
     src: img22,
-    title: "Owner Image 1 - Research Lab",
-  },
-  {
-    src: img23,
-    title: "Owner Image 1 - Research Lab",
-  },
-  {
-    src: img24,
-    title: "Owner Image 1 - Research Lab",
-  },
-  {
-    src: img25,
-    title: "Owner Image 1 - Research Lab",
-  },
-  {
-    src: img26,
-    title: "Owner Image 1 - Research Lab",
-  },
-  {
-    src: img27,
-    title: "Owner Image 1 - Research Lab",
-  },
-  {
-    src: img28,
-    title: "Owner Image 1 - Research Lab",
+    title:
+      "Jayraj and students With visiters at District level science fair, Vidhyadeep University",
   },
   {
     src: img29,
-    title: "Owner Image 1 - Research Lab",
+    title: "Board Work of Human Excretory System ",
   },
   {
     src: img30,
-    title: "Owner Image 1 - Research Lab",
-  },
-  {
-    src: img31,
-    title: "Owner Image 1 - Research Lab",
+    title: "Board Work of Nephron and its mechanism",
   },
   {
     src: img32,
-    title: "Owner Image 1 - Research Lab",
+    title: "with fellow Labmates at IISER,Bhopal",
   },
   {
     src: img33,
-    title: "Owner Image 1 - Research Lab",
+    title: "At IISER,Bhopal",
   },
   {
     src: img34,
-    title: "Owner Image 1 - Research Lab",
+    title: "Handling Transgenic Mice at IISER,Bhopal",
   },
   {
     src: img35,
-    title: "Owner Image 1 - Research Lab",
+    title: "Performing Immunological assay",
   },
   {
     src: img36,
-    title: "Owner Image 1 - Research Lab",
+    title: "Bid Adieu to Dr.Himanshu Kumar,Professer ",
   },
   {
     src: img37,
-    title: "Owner Image 1 - Research Lab",
+    title: "with Dr.Himanshu Kumar,Professer",
   },
   {
     src: img38,
-    title: "Owner Image 1 - Research Lab",
+    title: "Observing growth of Microalgae at CSIR CSMCRI",
   },
-  {
-    src: img39,
-    title: "Owner Image 1 - Research Lab",
-  },
+
   {
     src: img40,
-    title: "Owner Image 1 - Research Lab",
+    title:
+      "Fellow Participants and Instructor Principal Scientist Dr.Subir Kumar Mandal ",
   },
   {
     src: img41,
-    title: "Owner Image 1 - Research Lab",
+    title: "At Internation Conferance held by SAST,GTU",
   },
   {
     src: img42,
-    title: "Owner Image 1 - Research Lab",
+    title:
+      "Oral presentation of dissertation at Internation Conferance held by SAST,GTU",
   },
   {
     src: img43,
-    title: "Owner Image 1 - Research Lab",
+    title: "Oral presentation at National Conferance held by BMU,surat",
   },
   {
     src: img44,
-    title: "Owner Image 1 - Research Lab",
+    title: `Jayraj With his dissertation thesis on  "Metagenomic Profiling of Major Carp Gut Microbiota:Potential for Probiotics and invention in Aquaculture and Disease Management"`,
   },
 ];
 
@@ -254,7 +220,7 @@ function Media() {
             isDarkMode ? "text-white" : "text-black"
           } mb-6 text-center`}
         >
-          Owner's Images
+          Media
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto items-start">
           {images.map(({ src, title }, index) => (

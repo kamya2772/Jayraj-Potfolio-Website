@@ -110,7 +110,9 @@ function Contact() {
                   value={formData.email || ""}
                   onChange={handleChange}
                   required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 text-black"
+                  className={`w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 ${
+                    isDarkMode ? "text-black" : "text-white"
+                  } `}
                 />
               </div>
               <div className="mb-4">
@@ -127,7 +129,9 @@ function Contact() {
                   value={formData.subject || ""}
                   onChange={handleChange}
                   required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 text-black"
+                  className={`w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 ${
+                    isDarkMode ? "text-black" : "text-white"
+                  }`}
                 />
               </div>
               <div className="mb-4">
@@ -144,7 +148,9 @@ function Contact() {
                   onChange={handleChange}
                   required
                   rows="5"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 text-black"
+                  className={`w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 ${
+                    isDarkMode ? "text-black" : "text-white"
+                  }`}
                 ></textarea>
                 <button
                   type="submit"

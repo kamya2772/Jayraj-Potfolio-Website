@@ -97,20 +97,20 @@ function Introduction() {
     // Use theme class on the main container if Sidebar is outside it
     // Or rely on body class set in toggleTheme
     <div
-      className={`flex flex-col md:flex-row h-screen ${
+      className={`flex flex-col md:flex-row min-h-screen ${
         isDarkMode ? "dark" : "light"
       }`}
     >
       {/* Sidebar */}
       <Sidebar
-        className="fixed h-full" // Avoid fixed if it causes layout issues with scrolling content
+        // Avoid fixed if it causes layout issues with scrolling content
         toggleTheme={toggleTheme}
         isDarkMode={isDarkMode}
       />
       {/* Main Content Area */}
       {/* Added 'dark:bg-gray-800' as an example dark mode background */}
       <div
-        className={`flex-1 overflow-y-auto snap-y snap-mandatory ${
+        className={`flex-1 overflow-y-auto h-screen snap-y snap-proximity ${
           isDarkMode ? "bg-gray-800" : "bg-white"
         }`}
       >

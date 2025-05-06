@@ -51,11 +51,7 @@ function Experience() {
           : "bg-gray-100"
       }`}
     >
-      <Sidebar
-        className="fixed h-full"
-        toggleTheme={toggleTheme}
-        isDarkMode={isDarkMode}
-      />
+      <Sidebar toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
       <div className="flex-1 p-8 overflow-y-scroll justify-center items-center snap-y snap-mandatory">
         <h1 className="text-4xl font-bold text-yellow-500 mb-12 text-center">
           Work Experience

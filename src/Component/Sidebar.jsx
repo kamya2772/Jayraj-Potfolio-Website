@@ -37,7 +37,7 @@ function Sidebar({ toggleTheme, isDarkMode, onSidebarToggle }) {
       <div
         className={`hidden sm:flex flex-col ${
           isMinimized ? "w-16" : "w-64"
-        } h-full bg-gradient-to-b from-yellow-400 via-orange-400 to-orange-500  transition-all duration-300 overflow-y-auto p-1  rounded-3xl`}
+        } h-screen sticky top-0 bg-gradient-to-b from-yellow-400 via-orange-400 to-orange-500  transition-all duration-300 overflow-y-auto p-1  rounded-3xl flex-shrink-0 z-30`}
       >
         <div className="flex flex-col items-center mt-4">
           <Link to="/">

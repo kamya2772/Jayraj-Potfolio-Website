@@ -2,7 +2,13 @@ import React, { useState } from "react";
 import Sidebar from "../Component/Sidebar";
 import reviewPaperPdf from "../assets/RPaper.pdf";
 import image from "../assets/RPaperIMG.png";
-import noteImg from "../assets/notes.jpg";
+import noteIMG1 from "../assets/note1.jpeg";
+import noteIMG2 from "../assets/note2.jpeg";
+import noteIMG3 from "../assets/note3.jpeg";
+import noteIMG4 from "../assets/note4.jpeg";
+import noteIMG5 from "../assets/note5.jpeg";
+import noteIMG6 from "../assets/note6.jpeg";
+import noteIMG7 from "../assets/note7.jpeg";
 import note1 from "../assets/note1.pdf";
 import note2 from "../assets/note2.pdf";
 import note3 from "../assets/note3.pdf";
@@ -15,43 +21,43 @@ const notes = [
   {
     id: 1,
     topic: "Topic 1",
-    image: noteImg,
+    image: noteIMG1,
     notesUrl: note1,
   },
   {
     id: 2,
     topic: "Topic 2",
-    image: "https://via.placeholder.com/200x150?text=Topic+2",
+    image: noteIMG2,
     notesUrl: note2,
   },
   {
     id: 3,
     topic: "Topic 3",
-    image: "https://via.placeholder.com/200x150?text=Topic+3",
+    image: noteIMG3,
     notesUrl: note3,
   },
   {
     id: 4,
     topic: "Topic 4",
-    image: "https://via.placeholder.com/200x150?text=Topic+3",
+    image: noteIMG4,
     notesUrl: note4,
   },
   {
     id: 5,
     topic: "Topic 5",
-    image: "https://via.placeholder.com/200x150?text=Topic+3",
+    image: noteIMG5,
     notesUrl: note5,
   },
   {
     id: 6,
     topic: "Topic 6",
-    image: "https://via.placeholder.com/200x150?text=Topic+3",
+    image: noteIMG6,
     notesUrl: note6,
   },
   {
     id: 7,
     topic: "Topic 7",
-    image: "https://via.placeholder.com/200x150?text=Topic+3",
+    image: noteIMG7,
     notesUrl: note7,
   },
 ];
@@ -88,11 +94,7 @@ function Writing() {
           : " bg-gray-100"
       }`}
     >
-      <Sidebar
-        className="fixed h-screen"
-        toggleTheme={toggleTheme}
-        isDarkMode={isDarkMode}
-      />
+      <Sidebar toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
       <main className="flex-1 p-6 overflow-auto max-w-6xl mx-auto">
         <h1
           className={`text-3xl ${
