@@ -171,114 +171,138 @@ function Introduction() {
 
         {/* Education Section - REVISED FOR RESPONSIVENESS */}
         <section
-          className={`min-h-screen flex flex-col justify-center items-center snap-start py-16 px-4 ${
+          className={`min-h-screen flex flex-col items-center snap-start py-16 px-4 ${
             isDarkMode ? "bg-gray-900 text-gray-100" : "bg-blue-100 text-black"
           }`}
-          id="education" // Add ID
+          id="education"
         >
-          <div className="w-full max-w-4xl mx-auto">
-            <h1 className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-12 text-yellow-600 text-center">
+          <div className="w-full max-w-6xl mx-auto">
+            <h1 className="text-3xl sm:text-4xl font-bold mb-12 text-yellow-600 text-center">
               Education & Training
             </h1>
-            <div className="flex flex-col items-center gap-6 md:gap-8">
-              {/* Card 1 */}
+
+            {/* Card Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6  ">
+              {/* CARD COMPONENT START */}
               <div
-                className={`flex flex-col sm:flex-row rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl w-full max-w-2xl h-auto ${
+                className={`flex flex-col rounded-lg shadow-lg transform transition-transform hover:scale-105 hover:shadow-xl h-full ${
                   isDarkMode ? "bg-gray-800" : "bg-white"
                 }`}
               >
-                <img
-                  src={card2}
-                  alt="Veer Narmad South Gujarat University"
-                  className="w-full sm:w-1/3 h-48 sm:h-auto object-cover"
-                />
-                <div className="p-4 sm:p-6 flex flex-col justify-center">
-                  <h2
-                    className={`text-xl sm:text-2xl font-bold ${
-                      isDarkMode ? "text-blue-300" : "text-blue-900"
-                    }`}
-                  >
-                    Masters Of Science in Zoology
-                  </h2>
-                  <p
-                    className={`text-base sm:text-lg mt-1 ${
-                      isDarkMode ? "text-gray-300" : "text-black"
-                    }`}
-                  >
-                    Veer Narmad South Gujarat University, Surat
+                <div className="p-6 flex flex-col justify-between h-full">
+                  <div>
+                    <h2
+                      className={`text-xl sm:text-2xl font-bold ${
+                        isDarkMode ? "text-blue-300" : "text-blue-900"
+                      }`}
+                    >
+                      Doctor of Philosophy - PhD, Nanobiotechnology
+                    </h2>
+                    <p
+                      className={`text-base sm:text-lg mt-1 ${
+                        isDarkMode ? "text-gray-300" : "text-black"
+                      }`}
+                    >
+                      Sardar Vallabhbhai National Institute of Technology
+                      (SVNIT), Surat-395009
+                    </p>
+                  </div>
+                  <p className="text-green-500 font-semibold mt-4">
+                    2025 – Present | Pursuing
                   </p>
-                  <p className="text-green-500 font-semibold mt-2">
-                    {" "}
-                    {/* Adjusted color for dark mode visibility */}
+                </div>
+              </div>
+              {/* CARD COMPONENT END */}
+              {/* CARD COMPONENT START */}
+              <div
+                className={`flex flex-col rounded-lg shadow-lg transform transition-transform hover:scale-105 hover:shadow-xl h-full ${
+                  isDarkMode ? "bg-gray-800" : "bg-white"
+                }`}
+              >
+                <div className="p-6 flex flex-col justify-between h-full">
+                  <div>
+                    <h2
+                      className={`text-xl sm:text-2xl font-bold ${
+                        isDarkMode ? "text-blue-300" : "text-blue-900"
+                      }`}
+                    >
+                      Masters Of Science in Zoology
+                    </h2>
+                    <p
+                      className={`text-base sm:text-lg mt-1 ${
+                        isDarkMode ? "text-gray-300" : "text-black"
+                      }`}
+                    >
+                      Veer Narmad South Gujarat University, Surat
+                    </p>
+                  </div>
+                  <p className="text-green-500 font-semibold mt-4">
                     2023-2025 | Completed
                   </p>
                 </div>
               </div>
+              {/* CARD COMPONENT END */}
 
-              {/* Card 2 */}
+              {/* CARD COMPONENT START */}
               <div
-                className={`flex flex-col sm:flex-row rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl w-full max-w-2xl h-auto ${
+                className={`flex flex-col rounded-lg shadow-lg transform transition-transform hover:scale-105 hover:shadow-xl h-full ${
                   isDarkMode ? "bg-gray-800" : "bg-white"
                 }`}
               >
-                <img
-                  src={card2}
-                  alt="Veer Narmad South Gujarat University"
-                  className="w-full sm:w-1/3 h-48 sm:h-auto object-cover"
-                />
-                <div className="p-4 sm:p-6 flex flex-col justify-center">
-                  <h2
-                    className={`text-xl sm:text-2xl font-bold ${
-                      isDarkMode ? "text-blue-300" : "text-blue-900"
-                    }`}
-                  >
-                    Post Graduate Diploma in Molecular and Biochemical
-                    Technology
-                  </h2>
-                  <p
-                    className={`text-base sm:text-lg mt-1 ${
-                      isDarkMode ? "text-gray-300" : "text-black"
-                    }`}
-                  >
-                    Veer Narmad South Gujarat University, Surat
-                  </p>
-                  <p className="text-green-500 font-semibold mt-2">
+                <div className="p-6 flex flex-col justify-between h-full">
+                  <div>
+                    <h2
+                      className={`text-xl sm:text-2xl font-bold ${
+                        isDarkMode ? "text-blue-300" : "text-blue-900"
+                      }`}
+                    >
+                      Post Graduate Diploma in Molecular and Biochemical
+                      Technology
+                    </h2>
+                    <p
+                      className={`text-base sm:text-lg mt-1 ${
+                        isDarkMode ? "text-gray-300" : "text-black"
+                      }`}
+                    >
+                      Veer Narmad South Gujarat University, Surat
+                    </p>
+                  </div>
+                  <p className="text-green-500 font-semibold mt-4">
                     2018-2021 | Completed
                   </p>
                 </div>
               </div>
+              {/* CARD COMPONENT END */}
 
-              {/* Card 3 */}
+              {/* CARD COMPONENT START */}
               <div
-                className={`flex flex-col sm:flex-row rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl w-full max-w-2xl h-auto ${
+                className={`flex flex-col rounded-lg shadow-lg transform transition-transform hover:scale-105 hover:shadow-xl h-full ${
                   isDarkMode ? "bg-gray-800" : "bg-white"
                 }`}
               >
-                <img
-                  src={card1}
-                  alt="Sir P.T. Sarvajanik College of Science"
-                  className="w-full sm:w-1/3 h-48 sm:h-auto object-cover"
-                />
-                <div className="p-4 sm:p-6 flex flex-col justify-center">
-                  <h2
-                    className={`text-xl sm:text-2xl font-bold ${
-                      isDarkMode ? "text-blue-300" : "text-blue-900"
-                    }`}
-                  >
-                    Bachelor Of Science in Zoology
-                  </h2>
-                  <p
-                    className={`text-base sm:text-lg mt-1 ${
-                      isDarkMode ? "text-gray-300" : "text-black"
-                    }`}
-                  >
-                    Sir P.T. Sarvajanik College of Science, Surat
-                  </p>
-                  <p className="text-green-500 font-semibold mt-2">
+                <div className="p-6 flex flex-col justify-between h-full">
+                  <div>
+                    <h2
+                      className={`text-xl sm:text-2xl font-bold ${
+                        isDarkMode ? "text-blue-300" : "text-blue-900"
+                      }`}
+                    >
+                      Bachelor Of Science in Zoology
+                    </h2>
+                    <p
+                      className={`text-base sm:text-lg mt-1 ${
+                        isDarkMode ? "text-gray-300" : "text-black"
+                      }`}
+                    >
+                      Sir P.T. Sarvajanik College of Science, Surat
+                    </p>
+                  </div>
+                  <p className="text-green-500 font-semibold mt-4">
                     2018-2021 | Completed
                   </p>
                 </div>
               </div>
+              {/* CARD COMPONENT END */}
             </div>
           </div>
         </section>
