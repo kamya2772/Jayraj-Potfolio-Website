@@ -13,7 +13,7 @@ import {
 } from "react-icons/fa";
 import Image from "../assets/croped.jpg";
 import { Link } from "react-router-dom";
-import resume from "../assets/Resume.pdf";
+import resume from "../assets/Jayraj_Rana_RESUME_2025.pdf";
 
 function Sidebar({ toggleTheme, isDarkMode, onSidebarToggle }) {
   const [isMinimized, setIsMinimized] = useState(false);
