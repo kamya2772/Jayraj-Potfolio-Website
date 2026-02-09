@@ -1,25 +1,17 @@
 import React, { useState } from "react";
-import Sidebar from "../Component/Sidebar"; // Assuming Sidebar component is responsive or handled separately
 import { FaInstagram, FaYoutube, FaLinkedin } from "react-icons/fa";
+import { useOutletContext } from "react-router-dom";
 import emailjs from "emailjs-com";
 // Removed: import { useActionData } from "react-router-dom"; // Unused import
 
 function Contact() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const { isDarkMode } = useOutletContext();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     subject: "",
     message: "",
   });
-
-  const toggleTheme = () => {
-    setIsDarkMode((prevMode) => {
-      const newMode = !prevMode;
-      document.body.className = newMode ? "dark-theme" : "light-theme";
-      return newMode;
-    });
-  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -53,18 +45,17 @@ function Contact() {
   };
 
   return (
-    <div>
+    <div className="h-full overflow-hidden">
       {" "}
       {/* Outer container for potential page-level structure if needed */}
       <div
-        className={`flex h-screen ${
+        className={`h-full flex ${
           // Use min-h-screen for scrollability
           isDarkMode
             ? "bg-gradient-to-br from-black via-gray-800 to-gray-900"
             : "bg-gradient-to-br from-gray-300 via-gray-100 to-gray-300"
         }`}
       >
-        <Sidebar isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
         {/* Main content area */}
         <div className="flex-1 flex flex-col md:flex-row items-center justify-center p-4 md:p-8 space-y-8 md:space-y-0 md:space-x-12 overflow-y-auto">
           {/* Contact Form */}

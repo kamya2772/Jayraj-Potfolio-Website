@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Sidebar from "../Component/Sidebar";
+import { useOutletContext } from "react-router-dom";
 import Image from "../assets/ImageAbout.jpeg";
 import Resume from "../assets/Resume.pdf";
 import card1 from "../assets/PTsci.jpg";
@@ -17,47 +17,7 @@ import {
 function Introduction() {
   const [isVisible, setIsVisible] = useState(false);
   const [isAchivementVisible, setIsAchivementVisible] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  const toggleTheme = () => {
-    setIsDarkMode((prevMode) => {
-      const newMode = !prevMode;
-      // Apply theme class to body or a top-level container
-      document.body.className = newMode ? "dark-theme" : "light-theme";
-      // Also update a state/class on the root element if needed for component-level styling
-      // For example, you might have a main wrapper div
-      const rootElement = document.getElementById("root") || document.body; // Adjust selector if needed
-      if (newMode) {
-        rootElement.classList.add("dark");
-        rootElement.classList.remove("light");
-      } else {
-        rootElement.classList.add("light");
-        rootElement.classList.remove("dark");
-      }
-      return newMode;
-    });
-  };
-
-  // Set initial theme based on preference or default
-  useEffect(() => {
-    // Example: check local storage or system preference
-    const prefersDark =
-      window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: light)").matches;
-    const initialMode =
-      localStorage.getItem("theme") === "dark" ||
-      (!localStorage.getItem("theme") && prefersDark);
-    setIsDarkMode(initialMode);
-    document.body.className = initialMode ? "dark-theme" : "light-theme";
-    const rootElement = document.getElementById("root") || document.body;
-    if (initialMode) {
-      rootElement.classList.add("dark");
-      rootElement.classList.remove("light");
-    } else {
-      rootElement.classList.add("light");
-      rootElement.classList.remove("dark");
-    }
-  }, []);
+  const { isDarkMode } = useOutletContext();
 
   // Intersection Observer for Skills
   useEffect(() => {
@@ -94,23 +54,8 @@ function Introduction() {
   }, []); // Empty dependency array: run once on mount
 
   return (
-    // Use theme class on the main container if Sidebar is outside it
-    // Or rely on body class set in toggleTheme
-    <div
-      className={`flex flex-col md:flex-row min-h-screen ${
-        isDarkMode ? "dark" : "light"
-      }`}
-    >
-      {/* Sidebar */}
-      <Sidebar
-        // Avoid fixed if it causes layout issues with scrolling content
-        toggleTheme={toggleTheme}
-        isDarkMode={isDarkMode}
-      />
-      {/* Main Content Area */}
-      {/* Added 'dark:bg-gray-800' as an example dark mode background */}
       <div
-        className={`flex-1 overflow-y-auto h-screen snap-y snap-proximity ${
+        className={`h-full overflow-y-auto snap-y snap-proximity ${
           isDarkMode ? "bg-gray-800" : "bg-white"
         }`}
       >
@@ -499,10 +444,8 @@ function Introduction() {
             </div>
           </div>
         </section>
-      </div>{" "}
-      {/* End Main Content Area */}
-    </div> // End Flex Container
-  );
+      </div>
+    );
 }
 
 export default Introduction;
