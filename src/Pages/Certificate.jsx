@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Sidebar from "../Component/Sidebar";
+import { useOutletContext } from "react-router-dom";
 import certi1 from "../assets/Certi1.jpeg";
 import certi2 from "../assets/Certi2.jpeg";
 import certi3 from "../assets/Certi3.jpeg";
@@ -112,14 +112,7 @@ const certificates = [
 ];
 
 function Certificate() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-  const toggleTheme = () => {
-    setIsDarkMode((prevMode) => {
-      const newMode = !prevMode;
-      document.body.className = newMode ? "dark-theme" : "light-theme";
-      return newMode;
-    });
-  };
+  const { isDarkMode } = useOutletContext();
   return (
     <>
       <style>{`
@@ -169,13 +162,12 @@ function Certificate() {
         }
       `}</style>
       <div
-        className={`flex h-screen ${
+        className={`h-full flex ${
           isDarkMode
             ? "bg-gradient-to-br from-black via-gray-800 to-gray-900"
             : "bg-gray-100"
         }`}
       >
-        <Sidebar toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
         <main className="flex-1 p-6 overflow-auto">
           <h1 className="text-3xl font-bold mb-6">Certificates</h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">

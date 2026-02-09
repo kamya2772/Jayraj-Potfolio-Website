@@ -1,16 +1,10 @@
 import React, { useState } from "react";
-import Sidebar from "../Component/Sidebar";
+import { useOutletContext } from "react-router-dom";
+import { motion } from "framer-motion";
 
 function Experience() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const { isDarkMode } = useOutletContext();
   const [isExVisible, setIsExVisible] = useState(false);
-  const toggleTheme = () => {
-    setIsDarkMode((prevMode) => {
-      const newMode = !prevMode;
-      document.body.className = newMode ? "dark-theme" : "light-theme";
-      return newMode;
-    });
-  };
 
   const experiences = [
     {
@@ -44,49 +38,65 @@ function Experience() {
   ];
 
   return (
-    <div
-      className={`flex h-screen ${
-        isDarkMode
-          ? "bg-gradient-to-br from-black via-gray-800 to-gray-900"
-          : "bg-gray-100"
-      }`}
-    >
-      <Sidebar toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
-      <div className="flex-1 p-8 overflow-y-scroll justify-center items-center snap-y snap-mandatory">
-        <h1 className="text-4xl font-bold text-yellow-500 mb-12 text-center">
-          Work Experience
-        </h1>
-        <div className="relative">
+      <div className="h-full p-8 overflow-y-scroll justify-center items-center">
+        <motion.div
+           initial={{ opacity: 0, y: -20 }}
+           animate={{ opacity: 1, y: 0 }}
+           transition={{ duration: 0.5 }}
+           className="text-center mb-16 mt-8"
+        >
+           <h1 className="text-4xl md:text-5xl font-bold font-serif text-primary mb-4">
+            Work Experience
+          </h1>
+          <p className={`text-lg ${isDarkMode ? "text-gray-400" : "text-gray-600"}`}>
+             My professional journey and contributions.
+          </p>
+        </motion.div>
+        
+        <div className="relative max-w-4xl mx-auto">
+          {/* Vertical Line */}
+           <div className="absolute left-4 sm:left-1/2 top-0 h-full w-0.5 bg-gradient-to-b from-primary to-transparent sm:-translate-x-1/2 opacity-30"></div>
+
           {/* Experience Items */}
           {experiences.map((exp, index) => (
-            <div key={index} className="relative flex items-start mb-16 group">
-              {/* Dot */}
-              {/* Vertical Line */}
-              <div className="absolute left-8 top-0 h-full w-1 bg-green-500 "></div>
-              <div className="absolute left-4 top-0 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center z-10 shadow-lg">
-                <div className="w-4 h-4 bg-white rounded-full"></div>
-              </div>
+            <motion.div 
+              key={index} 
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              className={`relative flex flex-col sm:flex-row items-center mb-16 ${index % 2 === 0 ? "sm:flex-row-reverse" : ""}`}
+            >
+               {/* Dot */}
+              <div className="absolute left-4 sm:left-1/2 -translate-x-1/2 w-4 h-4 bg-primary rounded-full z-10 shadow-[0_0_10px_rgba(212,175,55,0.8)] ring-4 ring-white dark:ring-slate-900"></div>
 
-              {/* Content */}
-              <div className="ml-16 bg-white p-6 rounded-lg shadow-lg  group-hover:translate-x-2 transition-transform duration-300">
-                <h2 className="text-2xl font-bold text-gray-800 ">
-                  {exp.title}
-                </h2>
-                <p className="text-sm text-gray-600 italic mb-2">
-                  {exp.organization}
-                </p>
-                <p className="text-sm text-gray-500 mb-4">{exp.duration}</p>
-                <ul className="list-disc list-inside text-gray-700 space-y-2">
-                  {exp.description.map((desc, i) => (
-                    <li key={i}>{desc}</li>
-                  ))}
-                </ul>
+              {/* Content Spacer for Alignment */}
+              <div className="w-full sm:w-1/2"></div>
+              
+              {/* Card */}
+              <div className={`w-full sm:w-1/2 pl-12 sm:pl-0 ${index % 2 === 0 ? "sm:pr-12 text-left sm:text-right" : "sm:pl-12 text-left"}`}>
+                <div className={`p-6 rounded-2xl glass-card transition-all duration-300 hover:-translate-y-1 hover:shadow-xl border border-gray-100 dark:border-white/10 ${isDarkMode ? "bg-slate-800/40" : "bg-white/60"}`}>
+                   <h2 className={`text-xl font-bold font-serif mb-1 ${isDarkMode ? "text-white" : "text-gray-900"}`}>
+                    {exp.title}
+                  </h2>
+                  <p className="text-sm font-medium text-primary mb-2 italic">
+                    {exp.organization}
+                  </p>
+                   <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full mb-4">
+                    {exp.duration}
+                  </span>
+                  <ul className={`list-disc list-inside space-y-2 text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"} ${index % 2 === 0 ? "sm:rtl" : ""}`}>
+                     {/* RTL hack only affects bullet position if direction is supported, mainly just for text alignment */}
+                    {exp.description.map((desc, i) => (
+                      <li key={i} className="leading-relaxed">{desc}</li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
-    </div>
   );
 }
 
