@@ -1,110 +1,12 @@
-import React from "react";
-import { Link, useOutletContext } from "react-router-dom";
-import Image from "../assets/BGremovedImage.png";
-import { motion } from "framer-motion";
-
-function Home() {
-  const { isDarkMode } = useOutletContext();
-
-  return (
-    <div
-      className={`h-full flex flex-col md:flex-row items-center justify-between px-6 md:px-20 py-10`}
-    >
-      {/* Left Section */}
-      <div className="flex flex-col items-center sm:items-start space-y-6 px-2 sm:px-0 text-center sm:text-left max-w-2xl">
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1 }}
-          className="text-xl font-medium text-primary tracking-wide"
-        >
-          Hello There!
-        </motion.p>
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className={`text-5xl sm:text-6xl md:text-7xl font-serif font-bold leading-tight ${
-            isDarkMode ? "text-white" : "text-gray-900"
-          }`}
-        >
-          I’m <span className="text-primary relative inline-block">
-            Jayraj Rana
-            <span className="absolute bottom-2 left-0 w-full h-3 bg-primary/20 -z-10 skew-x-12 transform"></span>
-          </span>,<br />
-          Research Scholar.
-        </motion.h1>
-        <motion.p
-           initial={{ opacity: 0, y: 20 }}
-           animate={{ opacity: 1, y: 0 }}
-           transition={{ delay: 0.3 }}
-          className={`text-lg sm:text-xl leading-relaxed ${
-            isDarkMode ? "text-gray-300" : "text-gray-600"
-          }`}
-        >
-          I’m a researcher and artist, inspired by innovation, blending
-          <span className="font-semibold text-primary"> research</span>, 
-          <span className="font-semibold text-primary"> development</span>, and 
-          <span className="font-semibold text-primary"> teaching</span> to ignite curiosity and paint
-          the vast canvas of knowledge.
-        </motion.p>
-        
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-          className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto pt-4"
-        >
-          <Link to="introduction" className="w-full sm:w-auto">
-             <button className="w-full sm:w-auto bg-primary text-white px-8 py-4 rounded-xl shadow-lg hover:shadow-primary/50 hover:bg-primary-dark transition-all transform hover:-translate-y-1 font-bold text-lg tracking-wide">
-              View Portfolio
-            </button>
-          </Link>
-          <button
-            className={`w-full sm:w-auto border-2 px-8 py-4 rounded-xl font-bold text-lg transition-all transform hover:-translate-y-1 ${
-               isDarkMode 
-               ? "border-gray-700 text-white hover:bg-gray-800" 
-               : "border-gray-300 text-gray-800 hover:bg-gray-100"
-            }`}
-             onClick={() => {
-                const PhoneNumber = "9265423807";
-                const message = "Hello, It's nice to connecting with you 😊!";
-                window.open(
-                  `https://wa.me/${PhoneNumber}?text=${encodeURIComponent(
-                    message
-                  )}`,
-                  "_blank"
-                );
-              }}
-          >
-            WhatsApp
-          </button>
-        </motion.div>
-      </div>
-      
-      {/* Right Section */}
-      <motion.div 
-        initial={{ opacity: 0, scale: 0.9, rotate: 5 }}
-        animate={{ opacity: 1, scale: 1, rotate: 0 }}
-        transition={{ delay: 0.4, duration: 0.6 }}
-        className="relative mt-12 sm:mt-0"
-      >
-        <div className="absolute -inset-4 bg-gradient-to-tr from-primary to-transparent rounded-full blur-2xl opacity-30"></div>
-        <div
-          className={`relative border-4 rounded-3xl overflow-hidden glass-card p-2 w-80 h-[28rem] sm:w-96 sm:h-[32rem] ${
-            isDarkMode ? "border-white/10" : "border-black/5"
-          }`}
-        >
-          <div className="absolute inset-0 bg-primary/5"></div>
-          <img
-            src={Image}
-            alt="Jayraj Rana"
-            className="relative w-full h-full object-cover rounded-2xl shadow-inner"
-          />
-        </div>
-      </motion.div>
-    </div>
-  );
+import { Link } from 'react-router-dom';
+import portrait from '../assets/croped.jpg';
+import resume from '../assets/Jayraj_Rana_RESUME_2025.pdf';
+export default function Home() {
+  return <>
+    <section className="scholar-hero"><div className="hero-copy"><p className="eyebrow"><span /> BIOLOGICAL SCIENCES & NANOBIOTECHNOLOGY</p><h1>Jayraj Rana<span>PhD Research Scholar</span></h1><p className="hero-status">Nanobiotechnology · Pursuing since 2025</p><p className="hero-description">A researcher and artist inspired by innovation — bringing together research, development, and teaching to ignite curiosity and expand the canvas of knowledge.</p><div className="hero-actions"><Link className="button-primary" to="/writing">Explore my work <span>↗</span></Link><a className="text-link" href={resume} download>Curriculum vitae <span>↓</span></a></div><div className="hero-affiliation"><span className="affiliation-mark">01</span><p>Sardar Vallabhbhai National Institute of Technology<small>Surat, Gujarat · Biology educator & researcher</small></p></div></div><figure className="hero-portrait"><div className="portrait-frame"><img src={portrait} alt="Jayraj Rana, research scholar and biology educator" /><span className="portrait-label">A LIFE OF LEARNING</span></div><figcaption><span>Based in Surat, India</span><span>PhD pursuing · 2025–Present</span></figcaption></figure></section>
+    <section className="discipline-strip" aria-label="Academic fields"><span>Nanobiotechnology</span><span>Zoology</span><span>Molecular & biochemical technology</span><span>Biology education</span></section>
+    <section className="overview-section"><div className="section-intro"><p className="eyebrow">THE ACADEMIC JOURNEY</p><h2>Inquiry at the heart.<br />Knowledge in practice.</h2><Link className="text-link" to="/introduction">More about me ↗</Link></div><div className="overview-copy"><p>A Biology Lecturer with over five years of experience in academic institutions, specializing in vernacular language instruction. My journey in biological sciences is shaped by a commitment to education, research, and development.</p><p>Beyond the classroom and laboratory, acting and writing bring creativity and depth to my professional endeavors.</p><div className="fact-row"><div><strong>5+ years</strong><span>In biology education</span></div><div><strong>GATE & GSET</strong><span>Qualified · 2025</span></div></div></div></section>
+    <section className="explore-section"><div className="section-heading"><div><p className="eyebrow">EXPLORE THE PORTFOLIO</p><h2>Research, teaching & beyond.</h2></div><span className="section-note">A continuing pursuit of knowledge</span></div><div className="explore-grid">{[['01', 'Research & resources', 'Review papers, study notes, and video lessons that connect scientific inquiry with learning.', '/writing'], ['02', 'Academic experience', 'Teaching, mentorship, and practical training across educational and research institutions.', '/experience'], ['03', 'Training & credentials', 'Workshops, conferences, and hands-on learning across the biological sciences.', '/certificate']].map(([n, title, text, to]) => <Link className="explore-card" to={to} key={n}><span className="card-number">{n}</span><h3>{title}</h3><p>{text}</p><span className="card-arrow" aria-hidden="true">↗</span></Link>)}</div></section>
+    <section className="contact-banner"><div><p className="eyebrow">LET’S CONNECT</p><h2>Ideas grow through conversation.</h2><p>For academic conversations, teaching, and research connections.</p></div><Link className="button-primary" to="/contact">Get in touch ↗</Link></section>
+  </>;
 }
-
-export default Home;

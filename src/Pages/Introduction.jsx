@@ -1,68 +1,18 @@
-import React, { useEffect, useState } from "react";
-import { useOutletContext } from "react-router-dom";
-import Image from "../assets/ImageAbout.jpeg";
-import Resume from "../assets/Resume.pdf";
-import card1 from "../assets/PTsci.jpg";
-import card2 from "../assets/vnsgu.jpg";
-import {
-  FaChalkboardTeacher,
-  FaTheaterMasks,
-  FaMusic,
-  FaMicrophone,
-  FaPenNib,
-  FaBookOpen, // Keep if used elsewhere, otherwise remove
-  FaBookReader,
-} from "react-icons/fa";
-
+import { useOutletContext } from 'react-router-dom';
+import Image from '../assets/ImageAbout.jpeg';
+import Resume from '../assets/Resume.pdf';
 function Introduction() {
-  const [isVisible, setIsVisible] = useState(false);
-  const [isAchivementVisible, setIsAchivementVisible] = useState(false);
   const { isDarkMode } = useOutletContext();
-
-  // Intersection Observer for Skills
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(entry.isIntersecting);
-      },
-      { threshold: 0.3 } // Trigger earlier
-    );
-    const section = document.getElementById("skill-section");
-    if (section) {
-      observer.observe(section);
-    }
-    return () => {
-      if (section) observer.unobserve(section);
-    };
-  }, []); // Empty dependency array: run once on mount
-
-  // Intersection Observer for Achievements
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsAchivementVisible(entry.isIntersecting);
-      },
-      { threshold: 0.3 } // Trigger earlier
-    );
-    const section = document.getElementById("achivement-section");
-    if (section) {
-      observer.observe(section);
-    }
-    return () => {
-      if (section) observer.unobserve(section);
-    };
-  }, []); // Empty dependency array: run once on mount
-
   return (
       <div
         className={`h-full overflow-y-auto snap-y snap-proximity ${
           isDarkMode ? "bg-gray-800" : "bg-white"
         }`}
       >
-        {/* About Me Section */}
+        <header className="page-heading"><p className="eyebrow">BACKGROUND & QUALIFICATIONS</p><h1>About the scholar</h1><p>A journey through biological sciences, education, and creative practice.</p></header><nav className="about-navigation" aria-label="About page sections"><a href="#about">Biography</a><a href="#education">Education</a><a href="#skill-section">Skills & hobbies</a><a href="#achivement-section">Achievements</a></nav>
         <section
-          // Use min-h-screen for flexibility, py for padding
-          className={`min-h-screen flex items-center justify-center snap-start px-4 py-16 md:py-0 ${
+          // Use min-h-0 for flexibility, py for padding
+          className={`min-h-0 flex items-center justify-center snap-start px-4 py-16 md:py-12 ${
             isDarkMode ? "bg-black text-gray-100" : "bg-gray-100 text-black" // Ensure text color contrasts
           }`}
           id="about" // Add IDs for navigation
@@ -80,7 +30,7 @@ function Introduction() {
               <div className="absolute -bottom-11 right-11 sm:right-8 md:right-11 w-64 h-80 sm:w-72 sm:h-96 border-[10px] sm:border-[12px] rounded-3xl hidden sm:block border-yellow-400 z-10"></div>
             </div>
             {/* Right Section: Content */}
-            <div className="flex flex-col justify-center items-start text-justify px-4 sm:px-0 order-2 md:order-none">
+            <div className="flex flex-col justify-center items-start text-left px-4 sm:px-0 order-2 md:order-none">
               <h2 className="text-3xl sm:text-4xl text-yellow-500 font-bold mb-4">
                 About Me
               </h2>
@@ -116,21 +66,21 @@ function Introduction() {
 
         {/* Education Section - REVISED FOR RESPONSIVENESS */}
         <section
-          className={`min-h-screen flex flex-col items-center snap-start py-16 px-4 ${
+          className={`min-h-0 flex flex-col items-center snap-start py-16 px-4 ${
             isDarkMode ? "bg-gray-900 text-gray-100" : "bg-blue-100 text-black"
           }`}
           id="education"
         >
           <div className="w-full max-w-6xl mx-auto">
-            <h1 className="text-3xl sm:text-4xl font-bold mb-12 text-yellow-600 text-center">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-yellow-600 text-center">
               Education & Training
-            </h1>
+            </h2>
 
             {/* Card Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6  ">
               {/* CARD COMPONENT START */}
               <div
-                className={`flex flex-col rounded-lg shadow-lg transform transition-transform hover:scale-105 hover:shadow-xl h-full ${
+                className={`flex flex-col rounded-lg shadow-lg transform transition-transform hover:border-primary hover:shadow-xl h-full ${
                   isDarkMode ? "bg-gray-800" : "bg-white"
                 }`}
               >
@@ -160,7 +110,7 @@ function Introduction() {
               {/* CARD COMPONENT END */}
               {/* CARD COMPONENT START */}
               <div
-                className={`flex flex-col rounded-lg shadow-lg transform transition-transform hover:scale-105 hover:shadow-xl h-full ${
+                className={`flex flex-col rounded-lg shadow-lg transform transition-transform hover:border-primary hover:shadow-xl h-full ${
                   isDarkMode ? "bg-gray-800" : "bg-white"
                 }`}
               >
@@ -190,7 +140,7 @@ function Introduction() {
 
               {/* CARD COMPONENT START */}
               <div
-                className={`flex flex-col rounded-lg shadow-lg transform transition-transform hover:scale-105 hover:shadow-xl h-full ${
+                className={`flex flex-col rounded-lg shadow-lg transform transition-transform hover:border-primary hover:shadow-xl h-full ${
                   isDarkMode ? "bg-gray-800" : "bg-white"
                 }`}
               >
@@ -221,7 +171,7 @@ function Introduction() {
 
               {/* CARD COMPONENT START */}
               <div
-                className={`flex flex-col rounded-lg shadow-lg transform transition-transform hover:scale-105 hover:shadow-xl h-full ${
+                className={`flex flex-col rounded-lg shadow-lg transform transition-transform hover:border-primary hover:shadow-xl h-full ${
                   isDarkMode ? "bg-gray-800" : "bg-white"
                 }`}
               >
@@ -252,200 +202,42 @@ function Introduction() {
           </div>
         </section>
 
-        {/* Skills Section */}
-        <section
-          className={`min-h-screen flex flex-col justify-center items-center snap-start py-16 px-4 ${
-            isDarkMode
-              ? "bg-gray-700 text-gray-100"
-              : "bg-purple-100 text-black" // Lighter purple, adjusted text
-          }`}
-          id="skill-section" // ID already exists
-        >
-          <div className="max-w-4xl w-full mx-auto px-2">
-            <h1 className="text-3xl sm:text-4xl font-bold mb-12 sm:mb-16 text-yellow-600 text-center">
-              {" "}
-              {/* Increased mb */}
-              Skills & Hobbies
-            </h1>
-            {/* Skills Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
-              {" "}
-              {/* Increased gap */}
-              {/* Skill Items - Added responsive text size */}
-              {[
-                {
-                  icon: FaChalkboardTeacher,
-                  title: "Teaching",
-                  desc: "Sharing knowledge and inspiring students.",
-                  color: "text-blue-500",
-                  duration: 1000,
-                },
-                {
-                  icon: FaPenNib,
-                  title: "Writing",
-                  desc: "Blends logic and imagination through scientific articles and soulful poetry.",
-                  color: "text-green-500",
-                  duration: 1800,
-                },
-                {
-                  icon: FaBookReader,
-                  title: "Research & Development",
-                  desc: "Conducting studies to uncover insights.",
-                  color: "text-orange-500",
-                  duration: 2000,
-                },
-                {
-                  icon: FaTheaterMasks,
-                  title: "Acting",
-                  desc: "Bringing characters to life expressively.",
-                  color: "text-red-500",
-                  duration: 1200,
-                },
-                {
-                  icon: FaMusic,
-                  title: "Musical Enthusiast",
-                  desc: "Passionate about classical music and singing.",
-                  color: "text-purple-500",
-                  duration: 1400,
-                },
-                {
-                  icon: FaMicrophone,
-                  title: "Public Speaking",
-                  desc: "Engaging audiences with impactful speeches.",
-                  color: "text-gray-500",
-                  duration: 1600,
-                },
-              ].map((skill, index) => (
-                <div
-                  key={index}
-                  className={`flex flex-col items-center text-center gap-2 transform transition-transform ${
-                    isVisible
-                      ? "translate-x-0 opacity-100"
-                      : "-translate-x-10 opacity-0" // Slightly less translation
-                  }`}
-                  style={{ transitionDuration: `${skill.duration}ms` }} // Apply duration dynamically
-                >
-                  <skill.icon
-                    className={`${skill.color} text-4xl sm:text-5xl mb-3 sm:mb-4`}
-                  />
-                  <h2
-                    className={`text-2xl sm:text-3xl font-bold ${
-                      isDarkMode ? "text-white" : "text-black"
-                    }`}
-                  >
-                    {skill.title}
-                  </h2>
-                  <p
-                    className={`text-base sm:text-lg ${
-                      isDarkMode ? "text-gray-300" : "text-gray-700"
-                    }`}
-                  >
-                    {skill.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
+        <section id="skill-section" className="scholar-section" aria-labelledby="skills-heading">
+          <div className="scholar-section-intro"><p className="eyebrow">KNOWLEDGE & CREATIVE PRACTICE</p><h2 id="skills-heading">Skills & hobbies</h2><p>Academic work and creative interests that shape how I learn, teach, and communicate.</p></div>
+          <div className="skills-columns">
+            {[
+              { label: 'Academic practice', items: [
+                ['Teaching', 'Sharing knowledge and inspiring students.'],
+                ['Research & Development', 'Conducting studies to uncover insights.'],
+                ['Public Speaking', 'Engaging audiences with impactful speeches.'],
+              ] },
+              { label: 'Creative interests', items: [
+                ['Writing', 'Blends logic and imagination through scientific articles and soulful poetry.'],
+                ['Acting', 'Bringing characters to life expressively.'],
+                ['Musical Enthusiast', 'Passionate about classical music and singing.'],
+              ] },
+            ].map(group => <div className="skill-group" key={group.label}><p className="skill-group-label">{group.label}</p><dl>{group.items.map(([title, description], index) => <div className="skill-entry" key={title}><span className="skill-index" aria-hidden="true">0{index + 1}</span><div><dt>{title}</dt><dd>{description}</dd></div></div>)}</dl></div>)}
           </div>
         </section>
-
-        {/* Achievements Section */}
-        <section
-          className={`min-h-screen flex flex-col justify-center items-center snap-start py-10 px-4 ${
-            // Changed to flex-col for better centering control
-            isDarkMode ? "bg-gray-600 text-gray-100" : "bg-green-100 text-black"
-          }`}
-          id="achivement-section" // ID already exists
-        >
-          <div className="max-w-4xl w-full mx-auto">
-            <h1 className="text-3xl sm:text-4xl font-bold mb-12 sm:mb-16 text-center text-yellow-500">
-              {/* Increased mb */}
-              Achievements
-            </h1>
-            {/* Timeline container */}
-            <div className="relative flex flex-col gap-10 sm:gap-12 pl-16 sm:pl-16 border-l-4 md:border-l-6 ${isDarkMode ? 'border-gray-400' : 'border-gray-400'}">
-              {" "}
-              {/* Added left padding and border */}
-              {/* Achievement Items */}
-              {[
-                {
-                  year: "2025",
-                  title: "Gujarat State eligibility test (GSET) Qualified",
-                  desc: "Qualified GSET, eligible for Assistant Professor roles in Gujarat.",
-                  duration: 1000,
-                },
-                {
-                  year: "2025",
-                  title:
-                    "Graduate Aptitude Test in Engineering (GATE) Qualified",
-                  desc: "Qualified GATE Lifesciences(XL), eligible for higher studies and research.",
-                  duration: 1300,
-                },
-                {
-                  year: "2023",
-                  title: "Exceptional Achievement Award",
-                  desc: "Received by Surat Rana Samaj for outstanding contributions.",
-                  duration: 1600,
-                },
-
-                {
-                  year: "2021",
-                  title: "Patent Filed & 1st Rank",
-                  desc: "Filed and published a patent; achieved 1st rank in B.Sc Zoology.",
-                  duration: 1900,
-                },
-
-                // Add more achievements here if needed
-              ].map((ach, index) => (
-                <div
-                  key={index}
-                  // Relative positioning for the dot
-                  className={`relative flex items-start gap-4 transform transition-all ${
-                    isAchivementVisible
-                      ? "translate-x-0 opacity-100"
-                      : "-translate-x-10 opacity-0" // Slide in effect
-                  }`}
-                  style={{ transitionDuration: `${ach.duration}ms` }} // Dynamic duration
-                >
-                  {/* Timeline Dot */}
-                  <div
-                    className={`absolute -left-[calc(1.5rem+2px)] sm:-left-[calc(2.5rem+3px)] md:-left-[calc(2.5rem+4px)] top-1 w-12 h-12 sm:w-12 sm:h-12 rounded-full flex items-center justify-center text-black font-bold text-xs sm:text-sm ${
-                      isDarkMode ? "bg-yellow-400" : "bg-yellow-400"
-                    }`}
-                  >
-                    {/* Adjusted positioning and size */}
-                    {ach.year}
-                    {/* Optional Outer Ring */}
-                    <div
-                      className={`absolute w-16 h-16 sm:w-16 sm:h-16 border-2 sm:border-4 rounded-full -z-10 ${
-                        isDarkMode ? "border-yellow-500" : "border-yellow-500"
-                      }`}
-                    ></div>
-                  </div>
-                  {/* Text Content */}
-                  <div className="flex-1">
-                    {/* Takes remaining space */}
-                    <h2
-                      className={`text-lg pl-10 sm:pl-6 sm:text-xl font-bold ${
-                        isDarkMode ? "text-white" : "text-black"
-                      }`}
-                    >
-                      {ach.title}
-                    </h2>
-                    <p
-                      className={`mt-1 text-base pl-10 sm:pl-6 sm:text-lg ${
-                        isDarkMode ? "text-gray-300" : "text-gray-600"
-                      }`}
-                    >
-                      {ach.desc}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+        <section id="achivement-section" className="scholar-section" aria-labelledby="achievements-heading">
+          <div className="scholar-section-intro"><p className="eyebrow">MILESTONES & RECOGNITION</p><h2 id="achievements-heading">Achievements</h2><p>Selected qualifications, recognition, and milestones along my academic journey.</p></div>
+          <ol className="recognition-list">
+            {[
+              ['2025', 'Qualification', 'Gujarat State Eligibility Test (GSET) Qualified', 'Qualified GSET, eligible for Assistant Professor roles in Gujarat.'],
+              ['2025', 'Qualification', 'Graduate Aptitude Test in Engineering (GATE) Qualified', 'Qualified GATE Life Sciences (XL), eligible for higher studies and research.'],
+              ['2023', 'Recognition', 'Exceptional Achievement Award', 'Received from Surat Rana Samaj for outstanding contributions.'],
+              ['2021', 'Research & academic distinction', 'Patent Filed & 1st Rank', 'Filed and published a patent; achieved 1st rank in B.Sc. Zoology.'],
+            ].map(([year, category, title, description]) => <li className="recognition-entry" key={title}><span className="recognition-year">{year}</span><div><p className="eyebrow">{category}</p><h3>{title}</h3><p className="recognition-description">{description}</p></div></li>)}
+          </ol>
         </section>
       </div>
     );
 }
 
 export default Introduction;
+
+
+
+
+
+

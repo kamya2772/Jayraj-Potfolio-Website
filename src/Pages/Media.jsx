@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { useOutletContext } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
+
+
+
 import img1 from "../assets/img1.jpeg";
 import img2 from "../assets/img2.jpeg";
 import img3 from "../assets/img3.jpeg";
@@ -10,7 +10,7 @@ import img6 from "../assets/img6.jpeg";
 import img7 from "../assets/img7.jpeg";
 import img8 from "../assets/img8.jpeg";
 import img9 from "../assets/img9.jpeg";
-import img11 from "../assets/img11.jpeg";
+
 import img12 from "../assets/img12.jpeg";
 import img13 from "../assets/img13.jpeg";
 import img14 from "../assets/img14.jpeg";
@@ -20,17 +20,17 @@ import img17 from "../assets/img17.jpeg";
 import img18 from "../assets/img18.jpeg";
 import img19 from "../assets/img19.jpeg";
 import img20 from "../assets/img20.jpeg";
-import img21 from "../assets/img21.jpeg";
+
 import img22 from "../assets/img22.jpeg";
-import img23 from "../assets/img23.jpeg";
-import img24 from "../assets/img24.jpeg";
-import img25 from "../assets/img25.jpeg";
-import img26 from "../assets/img26.jpeg";
-import img27 from "../assets/img27.jpeg";
-import img28 from "../assets/img28.jpeg";
+
+
+
+
+
+
 import img29 from "../assets/img29.jpeg";
 import img30 from "../assets/img30.jpeg";
-import img31 from "../assets/img31.jpeg";
+
 import img32 from "../assets/img32.jpeg";
 import img33 from "../assets/img33.jpeg";
 import img34 from "../assets/img34.jpeg";
@@ -38,7 +38,7 @@ import img35 from "../assets/img35.jpeg";
 import img36 from "../assets/img36.jpeg";
 import img37 from "../assets/img37.jpeg";
 import img38 from "../assets/img38.jpeg";
-import img39 from "../assets/img39.jpeg";
+
 import img40 from "../assets/img40.jpeg";
 import img41 from "../assets/img41.jpeg";
 import img42 from "../assets/img42.jpeg";
@@ -81,65 +81,7 @@ const images = [
   { src: img44, title: `Jayraj With his dissertation thesis on "Metagenomic Profiling..."` },
 ];
 
-function Media() {
-  const [activeIndex, setActiveIndex] = useState(null);
-  const { isDarkMode } = useOutletContext();
-  
-  const handleCardClick = (index) => {
-    setActiveIndex(activeIndex === index ? null : index);
-  };
-
-  return (
-    <div className="h-full p-6 overflow-y-scroll">
-      <motion.div
-           initial={{ opacity: 0, y: -20 }}
-           animate={{ opacity: 1, y: 0 }}
-           transition={{ duration: 0.5 }}
-           className="text-center mb-12"
-        >
-          <h1 className="text-4xl md:text-5xl font-bold font-serif text-primary mb-4">
-            Media Gallery
-          </h1>
-          <p className={`text-lg ${isDarkMode ? "text-gray-400" : "text-gray-600"}`}>
-             Moments, events, and memories.
-          </p>
-      </motion.div>
-
-      <div className="columns-1 sm:columns-2 md:columns-3 gap-6 space-y-6 max-w-7xl mx-auto">
-        {images.map(({ src, title }, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "100px" }}
-            transition={{ duration: 0.5 }}
-            className="break-inside-avoid"
-            onClick={() => handleCardClick(index)}
-          >
-            <div className={`relative group cursor-pointer overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 ${isDarkMode ? "bg-slate-800" : "bg-white"}`}>
-              <img
-                src={src}
-                alt={title}
-                loading="lazy"
-                className="w-full h-auto block object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              
-              {/* Hover Overlay */}
-              <div
-                className={`absolute inset-0 bg-black/60 flex items-center justify-center p-4 text-center transition-opacity duration-300 ${
-                  activeIndex === index ? "opacity-100" : "opacity-0 group-hover:opacity-100"
-                }`}
-              >
-                <p className="text-white text-sm font-medium leading-relaxed">
-                  {title}
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        ))}
-      </div>
-    </div>
-  );
+export default function Media() {
+return <><header className="page-heading"><p className="eyebrow">IN THE LAB & BEYOND</p><h1>Academic life & moments</h1><p>Research, conferences, classroom experiences, and creative pursuits.</p></header><div className="columns-1 sm:columns-2 md:columns-3 gap-6 space-y-6">{images.map(({ src, title }) => <figure key={src} className="break-inside-avoid border border-gray-300 bg-white"><a href={src} target="_blank" rel="noopener noreferrer" aria-label={`View photo: ${title}`}><img src={src} alt={title} loading="lazy" className="w-full h-auto" /></a><figcaption className="p-4 text-xs text-gray-600">{title}</figcaption></figure>)}</div></>;
 }
 
-export default Media;

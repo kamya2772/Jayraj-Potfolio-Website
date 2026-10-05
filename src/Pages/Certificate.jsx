@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useOutletContext } from "react-router-dom";
+
+
 import certi1 from "../assets/Certi1.jpeg";
 import certi2 from "../assets/Certi2.jpeg";
 import certi3 from "../assets/Certi3.jpeg";
@@ -111,94 +111,6 @@ const certificates = [
   },
 ];
 
-function Certificate() {
-  const { isDarkMode } = useOutletContext();
-  return (
-    <>
-      <style>{`
-        .perspective {
-          perspective: 1000px;
-        }
-        .transform-style-preserve-3d {
-          transform-style: preserve-3d;
-        }
-        .backface-hidden {
-          backface-visibility: hidden;
-        }
-        .rotate-y-180 {
-          transform: rotateY(180deg);
-        }
-        .flip-card-inner {
-          transition: transform 0.7s;
-          transform-style: preserve-3d;
-          position: relative;
-          width: 100%;
-          height: 100%;
-        }
-        .group:hover .flip-card-inner , .group.is-flipped .flip-card-inner{
-          transform: rotateY(180deg);
-        }
-        .flip-card-front, .flip-card-back {
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          backface-visibility: hidden;
-          border-radius: 0.5rem; /* rounded-lg */
-          box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); /* shadow-lg */
-          overflow:hidden;
-        }
-        .flip-card-front {
-          
-        }
-        .flip-card-back {
-          background: #000000; /* blue-600 */
-          color: white;
-          transform: rotateY(180deg);
-          padding: 1rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-         
-        }
-      `}</style>
-      <div
-        className={`h-full flex ${
-          isDarkMode
-            ? "bg-gradient-to-br from-black via-gray-800 to-gray-900"
-            : "bg-gray-100"
-        }`}
-      >
-        <main className="flex-1 p-6 overflow-auto">
-          <h1 className="text-3xl font-bold mb-6">Certificates</h1>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {certificates.map(({ id, title, image, details, date }) => (
-              <div
-                key={id}
-                className="group perspective w-full h-64 sm:h-72 md:h-80 cursor-pointer"
-              >
-                <div className="flip-card-inner">
-                  <div className="flip-card-front">
-                    <img
-                      src={image}
-                      alt={title}
-                      className="w-full h-full object-cover "
-                    />
-                  </div>
-                  <div className="flip-card-back">
-                    <h2 className="text-xl font-semibold text-white mb-2">
-                      {title}
-                    </h2>
-                    <p className="text-sm mb-2">{details}</p>
-                    <p className="text-xs italic">{date}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </main>
-      </div>
-    </>
-  );
+export default function Certificate() {
+  return <><header className="page-heading"><p className="eyebrow">CONTINUING EDUCATION</p><h1>Training & credentials</h1><p>Conferences, workshops, and practical learning in the biological sciences.</p></header><div className="credential-grid">{certificates.map(({ id, title, image, details, date }) => <article key={id} className="credential-card"><a href={image} target="_blank" rel="noopener noreferrer" aria-label={`View certificate: ${title}`}><img src={image} alt={title} loading="lazy" /></a><p className="eyebrow">{date}</p><h2>{title}</h2><p>{details}</p><a className="text-link" href={image} target="_blank" rel="noopener noreferrer">View certificate ↗</a></article>)}</div></>;
 }
-
-export default Certificate;
